@@ -15,11 +15,12 @@ export default class Main {
   constructor() {
     // 维护当前requestAnimationFrame的id
     this.aniId = 0;
-
+    console.log('this', this);
     this.restart();
   }
 
   restart() {
+    console.log('ceshi');
     databus.reset();
 
     canvas.removeEventListener('touchstart', this.touchHandler);
@@ -150,6 +151,7 @@ export default class Main {
 
   // 实现游戏帧循环
   loop() {
+    console.log('new Date', new Date(), new Date().getTime());
     databus.frame++;
 
     this.update();
